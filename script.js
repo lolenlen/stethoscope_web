@@ -55,11 +55,13 @@ document.getElementById("connectBtn").onclick = async () => {
       log("> " + raw);
 
       // If the incoming BLE value is a float, then it is the session duration
-      const seconds = parseFloat(raw);
-      if (!isNaN(seconds)) {
-        logSession(seconds);
-        return;
-      }
+      if (raw.length > 1) { 
+        const seconds = parseFloat(raw); 
+        if (!isNaN(seconds)) {
+          logSession(seconds);
+          return;
+        }
+      };
     });
 
     log("Connected to " + device.name);
