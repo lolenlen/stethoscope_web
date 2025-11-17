@@ -3,7 +3,7 @@ body {
   padding: 20px;
   max-width: 500px;
   margin: auto;
-  background-image: url("media/image/bg.png");
+  /**background-image: url("media/image/bg.png");**/
   background-size: cover;
   background-position: center;
 }
