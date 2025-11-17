@@ -1,8 +1,16 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
+  background-image: url("media/image/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+h1, h2, h3 {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 button {
@@ -12,10 +20,42 @@ button {
   font-size: 18px;
 }
 
+button:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+button.bitBtn {
+  width: 45px;
+  padding: 0px 5px;
+  margin: 0 5px;
+  font-size: 20px;
+}
+
+#maskDisplay {
+  font-size: 24px;
+  width: 30%;
+  margin: 10px 5px;
+  padding: 15px 5px;
+  background: #ddd;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+
 #log {
   background: #eee;
   padding: 10px;
   white-space: pre-wrap;
   height: 200px;
   overflow-y: scroll;
+  font-family: 'Times New Roman', Times, serif;
 }
+
+#session {
+  background: #f9f9f9;
+  padding: 10px;
+  white-space: pre-wrap;
+  height: 20px;
+  font-family: 'Courier New', Courier, monospace;
+} 
