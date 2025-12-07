@@ -1,45 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stethoscope BLE Controller</title>
-<link rel="stylesheet" href="style.css">
-</head>
 <body>
 
-
-
-<h2>Stethoscope BLE Control</h2>
+<h2>Digital Stethoscope Control</h2>
 
 <button id="connectBtn">Connect to Stethoscope</button>
 
+<div id="controls" style="display:none; margin-top:20px;">
 
+  <h3>Configuration</h3>
 
-<div id="controls" style="display:none;">
+  <label>
+    Heartbeat BPM (60–160):
+    <input type="number" id="bpmInput" min="60" max="160" value="100">
+  </label>
 
-  <div id="setMaskSection" style="display: flex;">
-    <h3>Current Mask</h3>
-    <div id="maskDisplay">000</div>
+  <label>
+    Stomach:
+    <select id="stomachSel">
+      <option value="0">Healthy (Track 2)</option>
+      <option value="1">Unhealthy (Track 5)</option>
+    </select>
+  </label>
 
-    <h3>Mask Bits</h3>
-    <button class="bitBtn" data-index="0">0</button>
-    <button class="bitBtn" data-index="1">0</button>
-    <button class="bitBtn" data-index="2">0</button>
-  </div>
-  <button id="sendMaskBtn">SEND MASK</button>
+  <label>
+    Breathing:
+    <select id="breathingSel">
+      <option value="0">Healthy (Track 3)</option>
+      <option value="1">Unhealthy (Track 6)</option>
+    </select>
+  </label>
 
+  <button id="sendConfigBtn">SEND CONFIG</button>
 </div>
 
 <h3>Session</h3>
 <pre id="session"></pre>
 
-
 <h3>Log</h3>
 <pre id="log"></pre>
 
-
-
 <script src="script.js"></script>
 </body>
-</html>
