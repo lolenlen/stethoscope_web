@@ -61,7 +61,13 @@ document.getElementById("sendConfigBtn").onclick = async () => {
   let s   = document.getElementById("stomachSel").value;
   let b   = document.getElementById("breathingSel").value;
 
+  // Low-level BLE payload
   const configString = `${bpm},${s},${b}\n`;
+
+  // Human-readable log
+  const stomachText = s === "0" ? "healthy" : "unhealthy";
+  const breathingText = b === "0" ? "healthy" : "unhealthy";
+  const logString = `bpm: ${bpm} / stomach: ${stomachText} / breathing: ${breathingText}`;
 
   // Clear previous session result
   document.getElementById("session").textContent = "";
@@ -69,5 +75,7 @@ document.getElementById("sendConfigBtn").onclick = async () => {
   // Send BLE command
   await uartTx.writeValue(new TextEncoder().encode(configString));
 
-  log("< " + configString.trim());
+  // Log ONLY readable values
+  log("< Settings: " + logString);
 };
+

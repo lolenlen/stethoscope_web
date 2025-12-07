@@ -13,6 +13,9 @@ h1, h2, h3 {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+div.config {
+  padding-bottom: 30px;
+}
 button {
   width: 100%;
   padding: 14px;

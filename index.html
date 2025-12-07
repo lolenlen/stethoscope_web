@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Stethoscope Control</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
 <h2>Digital Stethoscope Control</h2>
@@ -8,28 +16,31 @@
 
   <h3>Configuration</h3>
 
-  <label>
-    Heartbeat BPM (60–160):
-    <input type="number" id="bpmInput" min="60" max="160" value="100">
-  </label>
+  <div id="config">
+    <label>
+      Heartbeat BPM (60–160):
+      <input type="number" id="bpmInput" min="60" max="160" value="100">
+    </label>
+  </div>
 
-  <label>
-    Stomach:
-    <select id="stomachSel">
-      <option value="0">Healthy (Track 2)</option>
-      <option value="1">Unhealthy (Track 5)</option>
-    </select>
-  </label>
+  <div id="config">
+    <label>
+      Stomach:
+      <select id="stomachSel">
+        <option value="0">Healthy</option>
+        <option value="1">Unhealthy</option>
+      </select>
+    </label>
 
-  <label>
-    Breathing:
-    <select id="breathingSel">
-      <option value="0">Healthy (Track 3)</option>
-      <option value="1">Unhealthy (Track 6)</option>
-    </select>
-  </label>
-
-  <button id="sendConfigBtn">SEND CONFIG</button>
+    <label>
+      Breathing:
+      <select id="breathingSel">
+        <option value="0">Healthy</option>
+        <option value="1">Unhealthy</option>
+      </select>
+    </label>
+  </div>
+  <button id="sendConfigBtn">SEND</button>
 </div>
 
 <h3>Session</h3>
@@ -37,6 +48,7 @@
 
 <h3>Log</h3>
 <pre id="log"></pre>
+<button id="resetLog">Reset</button>
 
 <script src="script.js"></script>
 </body>
