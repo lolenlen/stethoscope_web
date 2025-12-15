@@ -79,3 +79,14 @@ document.getElementById("sendConfigBtn").onclick = async () => {
   log("< Settings: " + logString);
 };
 
+// CLEAR LOG button
+document.getElementById("clearLogBtn").onclick = () => {
+  document.getElementById("log").textContent = "";
+  document.getElementById("session").textContent = "";
+};
+ //RESET button
+document.getElementById("resetLog").onclick = async() => {
+  if (!uartTx) return;
+  await uartTx.writeValue(new TextEncoder().encode("reset\n")); // IDK how to make
+  log("< Session terminated");
+};
